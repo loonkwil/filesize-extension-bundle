@@ -2,7 +2,7 @@
 
 namespace SPE\FilesizeExtensionBundle\Twig;
 
-class FilesizeExtension
+class FilesizeExtension extends \Twig_Extension
 {
     /**
      * @param integer $size

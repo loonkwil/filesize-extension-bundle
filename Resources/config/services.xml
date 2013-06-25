@@ -5,7 +5,7 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <service id="spe.twig.filesize_extension" class="SPE\FilesiteExtensionBundle\Twig\FilesizeExtension">
+        <service id="spe.twig.filesize_extension" class="SPE\FilesizeExtensionBundle\Twig\FilesizeExtension">
             <tag name="twig.extension" />
         </service>
     </services>
