@@ -1,0 +1,26 @@
+{
+    "name": "spe/filesize-extension-bundle",
+    "description": "Twig filter for human readable filesize",
+    "homepage": "https://github.com/loonkwil/filesize-extension-bundle",
+    "type": "symfony-bundle",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git://github.com/loonkwil/filesize-extension-bundle.git"
+        }
+    ],
+    "authors": [
+        {
+            "name": "Peter Simon",
+            "email": "simonpepe@gmail.com"
+        }
+    ],
+    "require":      {
+        "php": ">=5.3.3",
+        "twig/twig": "1.*"
+    },
+    "autoload": {
+        "psr-0": { "SPE\\FilesizeExtensionBundle": "" }
+    },
+    "target-dir": "SPE/FilesizeExtensionBundle"
+}
