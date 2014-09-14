@@ -4,21 +4,8 @@
 
 ## Install
 
-composer.json
-```json
-"repositories": [
-    {
-        "type": "vcs",
-        "url": "https://github.com/loonkwil/filesize-extension-bundle.git"
-    },
-],
-"require": {
-    "spe/filesize-extension-bundle": "dev-master",
-}
-```
-
 ```bash
-php composer.phar update
+composer require "spe/filesize-extension-bundle" "~0.1.0"
 ```
 
 ### Symfony 2.x
