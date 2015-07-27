@@ -19,24 +19,19 @@ class FilesizeExtensionTest extends \PHPUnit_Framework_TestCase
         $this->fse = new FilesizeExtension();
     }
 
-    protected function checkToFilesize($out, $size)
-    {
-        $this->assertEquals($out, $this->fse->readableFilesize($size));
-    }
-
 
     public function testReadableFilesize()
     {
-        $this->checkToFilesize('0 KB', -1);
-        $this->checkToFilesize('0 KB', 0);
-        $this->checkToFilesize('1 byte', 1);
-        $this->checkToFilesize('2 bytes', 2);
-        $this->checkToFilesize('2 KB', 2 * KB);
-        $this->checkToFilesize('2.51 KB', 2.51 * KB);
-        $this->checkToFilesize('2.52 KB', 2.516 * KB);
-        $this->checkToFilesize('2 MB', 2 * MB);
-        $this->checkToFilesize('2 GB', 2 * GB);
-        $this->checkToFilesize('2 TB', 2 * TB);
-        $this->checkToFilesize('2 PB', 2 * PB);
+        $this->assertEquals('0 KB', $this->fse->readableFilesize(-1));
+        $this->assertEquals('0 KB', $this->fse->readableFilesize(0));
+        $this->assertEquals('1 byte', $this->fse->readableFilesize(1));
+        $this->assertEquals('2 bytes', $this->fse->readableFilesize(2));
+        $this->assertEquals('2 KB', $this->fse->readableFilesize(2 * KB));
+        $this->assertEquals('2.51 KB', $this->fse->readableFilesize(2.51 * KB));
+        $this->assertEquals('2.52 KB', $this->fse->readableFilesize(2.516 * KB));
+        $this->assertEquals('2 MB', $this->fse->readableFilesize(2 * MB));
+        $this->assertEquals('2 GB', $this->fse->readableFilesize(2 * GB));
+        $this->assertEquals('2 TB', $this->fse->readableFilesize(2 * TB));
+        $this->assertEquals('2 PB', $this->fse->readableFilesize(2 * PB));
     }
 }
