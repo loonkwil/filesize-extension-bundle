@@ -34,5 +34,7 @@ $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
 ## Usage
 
 ```twig
-{{ file.size|readable_filesize }}
+{{ file.size|readable_filesize }} {# 123.45 KB #}
+{{ file.size|readable_filesize(0) }} {# 123 KB #}
+{{ file.size|readable_filesize(0, '') }} {# 123KB #}
 ```
