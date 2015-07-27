@@ -6,16 +6,18 @@ class FilesizeExtension extends \Twig_Extension
 {
     /**
      * @param integer $size
+     * @param integer $precision
+     * @param string  $space
      * @return string
      */
-    public function readableFilesize($size)
+    public function readableFilesize($size, $precision = 2, $space = ' ')
     {
         if( $size <= 0 ) {
-            return '0 KB';
+            return '0' . $space . 'KB';
         }
 
         if( $size === 1 ) {
-            return '1 byte';
+            return '1' . $space . 'byte';
         }
 
         $mod = 1024;
@@ -25,7 +27,7 @@ class FilesizeExtension extends \Twig_Extension
             $size /= $mod;
         }
 
-        return round($size, 2) . ' ' . $units[$i];
+        return round($size, $precision) . $space . $units[$i];
     }
 
     /**
