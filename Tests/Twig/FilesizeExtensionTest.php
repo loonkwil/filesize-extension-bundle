@@ -34,4 +34,24 @@ class FilesizeExtensionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('2 TB', $this->fse->readableFilesize(2 * TB));
         $this->assertEquals('2 PB', $this->fse->readableFilesize(2 * PB));
     }
+
+    public function testPrecision()
+    {
+        $this->assertEquals(
+            '1 KB', $this->fse->readableFilesize(1.2345 * KB, 0)
+        );
+        $this->assertEquals(
+            '1.23 KB', $this->fse->readableFilesize(1.2345 * KB, 2)
+        );
+        $this->assertEquals(
+            '1.235 KB', $this->fse->readableFilesize(1.2345 * KB, 3)
+        );
+    }
+
+    public function testSeparator()
+    {
+        $this->assertEquals(
+            '2KB', $this->fse->readableFilesize(2 * KB, 0, '')
+        );
+    }
 }
