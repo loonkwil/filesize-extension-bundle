@@ -36,9 +36,7 @@ class FilesizeExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            'readable_filesize' => new \Twig_Filter_Method(
-                $this, 'readableFilesize'
-            ),
+            new \Twig_SimpleFilter('readable_filesize', array($this, 'readableFilesize')),
         );
     }
 
