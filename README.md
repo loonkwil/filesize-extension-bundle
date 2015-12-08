@@ -5,10 +5,10 @@
 ## Install
 
 ```bash
-composer require "spe/filesize-extension-bundle" "~0.1.0"
+composer require "spe/filesize-extension-bundle" "~1.0.0"
 ```
 
-### Symfony 2.x
+### Symfony 2.x, 3.x
 
 app/AppKernel.php:
 ```php
