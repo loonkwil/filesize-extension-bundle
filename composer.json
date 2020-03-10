@@ -7,7 +7,7 @@
     "repositories": [
         {
             "type": "git",
-            "url": "git://github.com/loonkwil/filesize-extension-bundle.git"
+            "url": "git://github.com/pxlctzn/filesize-extension-bundle.git"
         }
     ],
     "authors": [
