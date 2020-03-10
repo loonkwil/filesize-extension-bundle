@@ -2,7 +2,10 @@
 
 namespace SPE\FilesizeExtensionBundle\Twig;
 
-class FilesizeExtension extends \Twig_Extension
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+
+class FilesizeExtension extends AbstractExtension
 {
     /**
      * @param integer $size
@@ -36,7 +39,7 @@ class FilesizeExtension extends \Twig_Extension
     public function getFilters()
     {
         return array(
-            new \Twig_SimpleFilter('readable_filesize', array($this, 'readableFilesize')),
+            new TwigFilter('readable_filesize', array($this, 'readableFilesize')),
         );
     }
 
