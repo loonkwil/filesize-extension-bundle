@@ -2,6 +2,7 @@
 
 namespace SPE\FilesizeExtensionBundle\Test\Twig;
 
+use PHPUnit\Framework\TestCase;
 use SPE\FilesizeExtensionBundle\Twig\FilesizeExtension;
 
 define('KB', 1024);
@@ -10,11 +11,11 @@ define('GB', MB * 1024);
 define('TB', GB * 1024);
 define('PB', TB * 1024);
 
-class FilesizeExtensionTest extends \PHPUnit_Framework_TestCase
+class FilesizeExtensionTest extends TestCase
 {
     protected $fse;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->fse = new FilesizeExtension();
     }
