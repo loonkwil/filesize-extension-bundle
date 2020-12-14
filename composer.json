@@ -12,8 +12,8 @@
         }
     ],
     "require":      {
-        "php": ">=7",
-        "twig/twig": ">=2"
+        "php": ">=7.0",
+        "twig/twig": ">=2.0"
     },
     "autoload": {
         "psr-0": { "SPE\\FilesizeExtensionBundle": "" }
