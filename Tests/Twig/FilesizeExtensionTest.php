@@ -55,4 +55,19 @@ class FilesizeExtensionTest extends TestCase
             '2KB', $this->fse->readableFilesize(2 * KB, 0, '')
         );
     }
+    public function testSuffix()
+    {
+        $this->assertEquals('12.35 KB', $this->fse->readableFilesize('12.3456 KB'));
+        $this->assertEquals('12.35 MB', $this->fse->readableFilesize('12.3456 MB'));
+        $this->assertEquals('12.35 GB', $this->fse->readableFilesize('12.3456 GB'));
+        $this->assertEquals('12.35 TB', $this->fse->readableFilesize('12.3456 TB'));
+        $this->assertEquals('12.35 PB', $this->fse->readableFilesize('12.3456 PB'));
+        $this->assertEquals('12.06 GB', $this->fse->readableFilesize(12.06*KB . ' MB'));
+        $this->assertEquals('12.34 TB', $this->fse->readableFilesize(12.34/KB . 'PB'));
+    }
+
+    public function testVeryBigNumber()
+    {
+        $this->assertEquals('1.18 PB', $this->fse->readableFilesize('1324567890123456'));
+    }
 }
