@@ -31,4 +31,6 @@ $bundles = array(
 {{ file.size|readable_filesize }} {# 123.45 KB #}
 {{ file.size|readable_filesize(0) }} {# 123 KB #}
 {{ file.size|readable_filesize(0, '') }} {# 123KB #}
+{# Also support conversion between units #}
+{{ '102400 KB'|readable_filesize }} {# 100 MB #}
 ```
